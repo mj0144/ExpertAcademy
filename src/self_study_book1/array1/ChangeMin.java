@@ -14,11 +14,23 @@ public class ChangeMin {
 
 		//거스름돈 배열
 		//인덱스 0번부터 10원의 갯수라 하자.
-		int[] arr = new int[5];
-		int a = money%1000;
+		int[] arr = {500,250,100,50,10};
+		int[] count = new int[5];
 		
-		if(a>=500) {
-			arr[4]
+		int i=0;
+		
+		while(money!=0) {
+			if(money<0) {
+				count[i]--;
+				money +=arr[i++];				
+			}else {
+				count[i]++;
+				money -= arr[i];
+			}
+		}
+		for(i=0; i<5; i++) {
+			System.out.println(arr[i] + ", " + count[i]);
+			
 		}
 		
 	}
