@@ -16,11 +16,11 @@ public class Absolute {
 		
 		for(int i=0; i<5; i++) {
 			for(int j=0; j<5; j++) {
-				for(int k=0; k<4; k++) { //이건 xy변화량
-					int testx=i+dx[k]; //순회할 x값
-					int testy=j+dy[k]; //순회할 y값.
-					if(!isRange(testx, testy)){
-						sum += calAbs(arr[i][j],arr[testx][testy]); //절댓값 계산.arr[i][j] -> 가운데값. arr[testx][texty] -> 이웃값.
+				for(int k=0; k<4; k++) { //이건 xy변화량. 한 값에 주변 4곳을 순회.
+					int x=i+dx[k]; //순회할 x값
+					int y =j+dy[k]; //순회할 y값.
+					if(!isRange(x, y)){
+						sum += calAbs(arr[i][j],arr[x][y]); //절댓값 계산.arr[i][j] -> 가운데값. arr[testx][texty] -> 이웃값.
 					}
 				}
 			}
